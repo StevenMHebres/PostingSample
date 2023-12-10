@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #newPage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <button id="openButton">Open JavaScript Page</button>
+    <div id="newPage">
+        <h1>Hello</h1>
+        <button id="closeButton">Return to Home Page</button>
+    </div>
+
+    <script>
+        document.getElementById("openButton").addEventListener("click", openPage);
+        document.getElementById("closeButton").addEventListener("click", closePage);
+
+        function openPage() {
+            document.getElementById("newPage").style.display = "block";
+        }
+
+        function closePage() {
+            document.getElementById("newPage").style.display = "none";
+        }
+    </script>
+</body>
+</html>

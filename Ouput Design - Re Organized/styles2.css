@@ -1,0 +1,64 @@
+/*Added*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color:rgba(78, 66, 134, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+form {
+    display: grid;
+    gap: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    margin-top: 0.5em;
+}
+
+button {
+    background-color: #333;
+    color: #000000;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.emergency-call {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.emergency-call button {
+    background-color: #ff0000;
+}

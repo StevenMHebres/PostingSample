@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup_Project</title>
+    <link rel="icon" href="Image & Video/MainWebLogoWithoutText.png" type="Image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <!-- Opening Animation Screen -->
+    <div class="opening-screen" id="openingScreen">
+        <img src="Image & Video/MainWebLogoWithoutText.png" style="width: 200px; height: 200px; position: absolute; top: 100px; left: 580px;">
+        <div class="opening-text" style="z-index: 1; position: relative;">Guardian Vision: Empowering Safer Communities</div>
+    </div>
+
+    <!-- Upper Border Section -->
+    <div class="UpperBorder">
+        <!-- Home Button -->
+        <button class="active" onclick="showHome()">About</button>
+        <!-- Features Button -->
+        <button onclick="showFeatures()">Features</button>
+        <!-- Contact Button -->
+        <button onclick="showContact()">Contact</button>
+        <!-- Title Text -->
+        <div class="centered-text">Guardian Vision: Empowering Safer Communities</div>
+    </div>
+
+    <div class="container" id="homeSection">
+        <!-- Video -->
+        <div class="video">
+            <video width="100%" height="auto" controls>
+                <source src="Image & Video/Vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- "Synopsis" Button Container -->
+        <div class="synopsis-container">
+            <!-- "Synopsis" Button -->
+            <button onclick="toggleSynopsis()" class="synopsis-button">Synopsis</button>
+        </div>
+
+        <!-- Text (Initially Hidden) -->
+        <div class="text" id="synopsisText" style="display: none; font-size: 1.5vw; padding: 2%;">
+            <p>Guardian Vision is not just a project; it's a movement towards safer and empowered communities. Our video introduction sets the stage, unveiling the passion and dedication behind this initiative.</p>
+
+            <p>As the opening animation fades, you'll embark on a journey that transcends traditional safety measures. Join us in exploring innovative technologies and collaborative efforts aimed at making a tangible impact on community well-being.</p>
+
+            <p>This video serves as a gateway to Guardian Vision's core values: transparency, inclusivity, and the belief that everyone, regardless of expertise, has a crucial role to play in building a safer future. Watch, get inspired, and become a part of this collective endeavor!</p>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="containerFeat" id="featuresSection">
+        <div class="featureContent">
+            <!-- Weapon Detector Feature -->
+            <div class="featureItem" id="beingproposed">
+                <img src="Image & Video/WeaponDetector Logo.png" width="20%" height="20%" alt="Weapon Detector Logo" style="float: left; margin-right: 1em;">
+                <p style="color: #d607ff; font-size: 1.5vw;">Weapon Detector</p>
+                <p align="center" style="font-size: 1.2vw;">Project Status:</p>
+                <p align="center" style="color: #d607ff; font-size: 1.2vw;">--being proposed--</p>
+            </div>
+
+            <!-- SAVE - Emergency Situations Feature -->
+            <div class="featureItem" id="started">
+                <img src="Image & Video/SAVE logo.png" width="20%" height="20%" alt="SAVE Logo" style="float: left; margin-right: 1em;">
+                <a href="Features/SAVE.html" target="_blank" style="color: rgb(150, 160, 11); font-size: 1.5vw;">Save - Emergency Situations</a>
+                <p align="center" style="font-size: 1.2vw;">Project Status:</p>
+                <p align="center" style="color: rgb(150, 160, 11); font-size: 1.2vw;">Started</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="containerCont" id="contactSection">
+        <!-- Example content for Contact section -->
+        <div class="featureContent" >
+            <section>
+                <p>Join us as aim for the safety of our community</p>
+                <form id="inquiryForm">
+                    <label for="name" style="color: rgb(2, 2, 2);">Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email" style="color: rgb(2, 2, 2);">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="message" style="color: rgb(2, 2, 2);">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+        
+                    <button type="button" onclick="submitForm()">Submit</button>
+                </form>
+        
+                <div class="emergency-call">
+                    <p>In case of emergency, please call 911 or your local emergency hotline.</p>
+                    <button type="button" onclick="callEmergency()">Call Emergency</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Project For The Safer & Better Future
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

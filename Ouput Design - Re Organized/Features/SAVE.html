@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save App</title>
+    <!-- Add the following line for the icon -->
+    <link rel="icon" href="Image & Video/SAVE logo.png" type="Image/png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .emergency-card {
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease, transform 0.5s ease, border 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .emergency-card.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            border: 1px solid #333;
+        }
+
+        #centerText {
+            text-align: center;
+            font-size: 2vw;
+            color: #555;
+            margin-top: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .commingsoon {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Save - Emergency Situations</h1>
+        <h7>Beta</h7>
+    </header>
+
+    <nav>
+        <a href="#body" onclick="showSituations('body')">Body Situations</a>
+        <a href="#kitchen" onclick="showSituations('kitchen')">Kitchen Situations</a>
+        <a href="#others" onclick="showSituations('others')">Other Situations</a>
+    </nav>
+
+    <section>
+        <div id="centerText">Welcome to Save, What Situation are you in now?</div>
+
+        <div class="emergency-card" id="body">
+            <strong>Cold:</strong> 
+            <p>
+                Description: Cold can be caused by exposure to low temperatures. It may lead to discomfort and illness.
+            </p>
+            <ul>
+                <li>Solution 1: Keep warm by wearing layered clothing.</li>
+                <li>Solution 2: Drink hot liquids, such as tea or soup.</li>
+                <li>Solution 3: Get plenty of rest to help your body recover.</li>
+            </ul>
+
+            <strong>Nosebleed:</strong>
+            <p>
+                Description: Nosebleeds can occur due to various reasons, including dry air or injury to the nose.
+            </p>
+            <ul>
+                <li>Solution 1: Pinch your nose and lean forward to minimize blood flow.</li>
+                <li>Solution 2: Apply an ice pack to the nose bridge to constrict blood vessels.</li>
+                <li>Solution 3: Use a saline nasal spray to keep the nasal passages moist.</li>
+            </ul>
+
+            <strong>Fever:</strong>
+            <p>
+                Description: Fever is a common symptom of illness and indicates an elevated body temperature.
+            </p>
+            <ul>
+                <li>Solution 1: Rest and stay hydrated to support the body's recovery.</li>
+                <li>Solution 2: Take fever-reducing medication following the recommended dosage.</li>
+                <li>Solution 3: Use a damp cloth to gently sponge the body for additional comfort.</li>
+            </ul>
+        </div>
+
+        <div class="emergency-card" id="kitchen">
+            <strong>Burned by oil:</strong>
+            <p>
+                Description: Accidental burns while cooking can be painful. It's important to take immediate action.
+            </p>
+            <ul>
+                <li>Solution 1: Run cool water over the burn to reduce heat.</li>
+                <li>Solution 2: Cover the burn with a clean, dry cloth to prevent infection.</li>
+                <li>Solution 3: Apply a burn ointment if available.</li>
+            </ul>
+
+            <strong>Cut:</strong>
+            <p>
+                Description: Cuts can occur while handling sharp objects. Quick and proper care is essential.
+            </p>
+            <ul>
+                <li>Solution 1: Clean the cut with soap and water to prevent infection.</li>
+                <li>Solution 2: Apply an antiseptic and cover with a bandage.</li>
+                <li>Solution 3: If bleeding is severe, apply direct pressure and seek medical help.</li>
+            </ul>
+        </div>
+
+        <div class="emergency-card" id="others">
+            <div class="commingsoon">
+                <strong>--- Comming Soon ---</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Save - Guardian Vision
+    </footer>
+
+    <script>
+        function showSituations(situationId) {
+            var centerText = document.getElementById('centerText');
+            var situations = document.querySelectorAll('.emergency-card');
+
+            // Hide all situations and show center text
+            situations.forEach(function (situation) {
+                situation.classList.remove('active');
+            });
+
+            centerText.style.opacity = '1';
+
+            // If the same situation is clicked again, hide it and show center text
+            if (centerText.getAttribute('data-current') === situationId) {
+                centerText.innerHTML = 'Welcome to Save, What Situation are you in now?';
+                centerText.removeAttribute('data-current');
+            } else {
+                // Show the selected situation on the right side with a smooth fade-in animation
+                var selectedSituation = document.getElementById(situationId);
+                selectedSituation.classList.add('active');
+                centerText.style.opacity = '0';
+                centerText.setAttribute('data-current', situationId);
+            }
+        }
+    </script>
+</body>
+</html>
